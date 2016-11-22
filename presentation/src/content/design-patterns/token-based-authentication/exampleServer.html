@@ -1,0 +1,33 @@
+<span class="fragment">// HTTP
+const expressJwt = require('express-jwt');
+
+app.get('/do-something-very-secret', expressJwt({
+  secret: publicKey
+}), (req, res) => {
+  if (!req.user.admin) {
+    return res.sendStatus(401);
+  }
+
+  res.sendStatus(200);
+});
+
+// Websockets
+const jwt = require('jsonwebtoken');
+
+webSocketServer.on('connection', socket => {
+  socket.on('message', message => {
+    message = JSON.parse(message);
+
+    if (message.command === 'authenticate') {
+      jwt.verify(data.token, options, function (err, decoded) {
+        if (err) {
+          // Du kommst hier nicht rein!
+        }
+
+        // Client wurde authentifiziert
+      });
+    }
+  });
+});
+
+...</span>

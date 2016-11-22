@@ -1,0 +1,367 @@
+.reveal {
+  counter-reset: chapters subchapters;
+
+  .slides {
+    text-align: left;
+    padding: 0;
+  }
+
+  .slides > section {
+    display: block !important;
+    height: 100% !important;
+  }
+
+  .slides > section,
+  .slides > section > section {
+    &.present, &.past {
+      height: 100%;
+    }
+  }
+
+  .chapter-headline {
+    // color: $color-blue;
+    // &::before {
+    //   counter-increment: chapters;
+    //   content: counter(chapters) ". ";
+    // }
+  }
+
+  // .subchapter-headline {
+  //   counter-increment: subchapters;
+  // }
+
+  section {
+    padding: 0px !important;
+    position: absolute;
+  }
+
+  .slide--flex {
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    display: flex;
+    overflow: scroll;
+
+    &.slide--vertical {
+      flex-direction: column;
+
+      &.slide--vertical-center {
+        justify-content: center;
+      }
+
+      &.slide--horizontal-center {
+        align-items: center;
+        text-align: center;
+      }
+
+      &.slide--distribute {
+        justify-content:space-around;
+      }
+    }
+
+    &.slide--horizontal {
+      flex-direction: row;
+
+      &.slide--vertical-center {
+        align-items: center;
+      }
+    }
+
+    .slide__item--flex {
+      flex: 1 1 0%;
+    }
+
+    .slide__item--auto {
+      flex: 0 0 auto;
+    }
+
+    .slide__item--text-align-centered {
+      text-align: center;
+      padding-left: 1em;
+      padding-right: 1em;
+
+      > * {
+        width: 100%;
+      }
+    }
+  }
+
+  .slide--text {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 1em;
+    box-sizing: border-box;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    counter-reset: footnotes;
+
+    .slide__item--separator {
+      border-bottom: solid 1px rgba(0,0,0, 0.2);
+    }
+
+    .footnote-reference {
+      counter-increment: footnotes;
+    	text-decoration: none;
+    	color: inherit;
+    }
+
+    .footnote-reference::after {
+    	content: "[" counter(footnotes) "]";
+    	vertical-align: super;
+    	font-size: 0.5em;
+    	margin-left: 2px;
+      opacity: 0.75;
+    }
+
+    h3 {
+      flex: 0 0 auto;
+    }
+
+    ul {
+      flex: 1 1 100%;
+      overflow-y: scroll;
+      padding: 0;
+      margin: 0;
+      margin-top: 10px;
+      display: block;
+      border-top: 1px solid rgba(0,0,0, 0.2);
+
+      li {
+        list-style-type: none;
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+        position: relative;
+      }
+
+      li:hover {
+        background: rgba(0,0,0, 0.1);
+      }
+
+      li::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: rgba(0,0,0, 0.2);
+        left: 0em;
+        bottom: 0px;
+      }
+    }
+
+    ol {
+      flex: 0 0 auto;
+      width: 100%;
+      margin: 0.5em 0 0 0;
+      padding: 0 0 0 0.4em;
+
+      li {
+        margin: 0px;
+        padding: 0px;
+        font-size: 0.4em;
+        list-style-type: decimal;
+        color: #444;
+
+        a {
+          color: inherit;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .slide--table {
+    table {
+      min-width: 100vw;
+      min-height: 100vh;
+      border-spacing: 0px;
+
+      tr th,
+      tr td {
+        padding: 0.4em;
+        border: 0px;
+      }
+
+      tr:nth-child(even) {
+        background-color: rgba(0,0,0, 0.075);
+      }
+    }
+  }
+
+  .slide--list {
+    h3 {
+      text-align: center;
+    }
+  }
+
+  .slide--pros {
+    background: $color-green;
+
+    h3::after {
+      content: "😃";
+      display: inline-block;
+      margin-left: 20px;
+    }
+  }
+
+  .slide--cons {
+    background: $color-red;
+
+    *, a {
+      color: $color-dark-gray !important;
+    }
+
+    h3::after {
+      content: "😭";
+      display: inline-block;
+      margin-left: 20px;
+    }
+  }
+
+  .slide--conclusion {
+    h3::after {
+      content: "🤔";
+      display: inline-block;
+      margin-left: 20px;
+    }
+  }
+
+  pre {
+    box-shadow: none;
+  }
+
+  .slide--design-pattern {
+    .problem::before {
+      content: "🤔";
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .proposal::before {
+      content: "🤗";
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+
+  .responsive-image {
+    border: none;
+    box-shadow: none;
+  }
+
+  .slide--logos {
+    .slide__item--flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .logo {
+        flex: 0 0 0%;
+        max-width: 140px;
+
+        svg {
+          width: 100%;
+          height: auto;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          border: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .slide--image-split {
+    align-items: stretch;
+    justify-content: center;
+
+    .slide--image {
+      flex: 1 1 50%;
+      width: 50%;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        max-height: none !important;
+        max-width: none !important;
+        width: auto !important;
+        margin: 0;
+        border: none;
+      }
+
+      h2 {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        margin: 0;
+        z-index: 10;
+        color: $color-overlay-foreground;
+        background: $color-overlay-background;
+        padding: 1em;
+        font-size: 1.2em;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  .slide--screenshot {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+
+    .screenshot {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      top: 0px;
+      left: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .screenshot img {
+      border: 0;
+      box-shadow: none;
+      width: 100%;
+      height: auto !important;
+      min-height: none;
+      max-height: none;
+    }
+
+    .screenshot-caption {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      text-align: right;
+      color: $color-overlay-foreground;
+      background: rgba(0, 0, 0, 0.6);
+
+      small {
+        padding: 1em;
+        color: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}

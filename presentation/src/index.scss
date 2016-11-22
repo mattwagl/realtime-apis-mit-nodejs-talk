@@ -1,0 +1,42 @@
+@import "../node_modules/reveal.js/css/reveal.css";
+@import "../node_modules/reveal.js/css/theme/simple.css";
+@import "components/index";
+
+body {
+  background: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.reveal a:link,
+.reveal a:visited {
+  color: $color-blue;
+}
+
+.reveal .progress span {
+  background: $color-blue;
+}
+
+.reveal {
+  * {
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, small, li, div {
+    font-family: "ff-netto-web-1";
+    color: $color-dark-gray;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+@import "content/intro/what";
+@import "content/intro/why-realtime";
+@import "content/transports/index";
+@import "content/libraries/index";
+@import "content/design-patterns/index";
+@import "content/conclusion/index";

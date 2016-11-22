@@ -1,0 +1,28 @@
+<span class="fragment">const jsonLines = require('json-lines');
+
+const app = express();
+
+...
+
+app.post('/api/dashboard/updates', jsonLines(client => {
+  let liveStream;
+
+  client.once('connect', () => {
+    liveStream = dataService.getLiveStream('dashboard');
+
+    liveStream.on('data', data => {
+      client.send({
+        name: 'dashboard',
+        data
+      });
+    });
+  });
+
+  client.once('disconnect', () => {
+    liveStream.end();
+  });
+}));
+
+app.listen(3000);
+
+</span>

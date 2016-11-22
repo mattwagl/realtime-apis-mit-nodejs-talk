@@ -1,0 +1,24 @@
+#transports {
+  background: #000;
+  opacity: 1 !important;
+}
+
+#transports .background {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: url('static/images/transports/14761441465_a12c9fc8f3_o.jpg') no-repeat;
+  background-size: cover;
+  filter: grayscale(100%) contrast(100%);
+  opacity: 0.2;
+  z-index: 1;
+}
+
+#transports h2,
+#transports h4 {
+  color: #fff;
+  z-index: 100;
+  text-shadow: 0px 0px 10px #000;
+}

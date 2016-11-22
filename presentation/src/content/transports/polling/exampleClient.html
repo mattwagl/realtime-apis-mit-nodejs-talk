@@ -1,0 +1,14 @@
+<span class="fragment">const request = require('superagent');
+
+const pollData = function () {
+  request.
+    get('/api/dashboard').
+    end((err, res) => {
+      // Update client state with res.body
+      // Render new state
+
+      setTimeout(pollData, 2.5 * 1000)
+    });
+};
+
+pollData();</span>

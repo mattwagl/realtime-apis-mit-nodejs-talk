@@ -1,0 +1,15 @@
+...
+
+api.subscribe(`issue::${currentIssue.id}::updated`, (event) => {
+  const issue = event.payload;
+
+  stores.issues.find(issue.id => currentIssue.id).update(issue);
+});
+
+api.subscribe(`issue::${currentIssue.id}::reaction-added`, (event) => {
+  const reaction = event.payload;
+
+  stores.issues.find(issue.id => currentIssue.id).addReaction(reaction);
+});
+
+...

@@ -1,0 +1,19 @@
+<span class="fragment">const socket
+    = new WebSocket('ws://api.dashboard.io:3000');
+
+socket.onopen = () => {
+  socket.send(JSON.stringify({
+    command: 'subscribe',
+    to: 'dashboard'
+  }));
+};</span>
+
+<span class="fragment">socket.onmessage = (message) => {
+  const event = JSON.parse(message.data);
+
+  switch(event.type) {
+    case 'dashboard::updated':
+      render.dashboard(event.payload);
+      break;
+  }
+};</span>

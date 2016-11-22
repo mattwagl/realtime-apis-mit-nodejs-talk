@@ -1,0 +1,59 @@
+.slide--flex.why-realtime {
+  background: #000 !important;
+  align-items: stretch !important;
+  justify-content: flex-end !important;
+}
+
+.slide--flex.why-realtime .background {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.slide--flex.why-realtime h2,
+.slide--flex.why-realtime h4 {
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+}
+
+.slide--flex.why-realtime h2 {
+  padding-top: 0.4em;
+}
+
+.slide--flex.why-realtime h4 {
+  padding-top: 0.4em;
+  padding-bottom: 1em;
+}
+
+#why-realtime-collaboration .background {
+  background: url('static/images/intro/why-realtime/collaboration.png') no-repeat;
+  background-size: cover;
+  filter: grayscale(75%) contrast(100%);
+  opacity: 0.75;
+}
+
+#why-realtime-live-datastreams .background {
+  background: url('static/images/intro/why-realtime/live-datastreams.png') no-repeat;
+  background-size: cover;
+  filter: grayscale(75%) contrast(100%);
+  opacity: 0.75;
+}
+
+#why-realtime-embedded .background {
+  background: url('static/images/intro/why-realtime/embedded.jpg');
+  background-size: 100% auto;
+  filter: grayscale(100%) contrast(100%);
+  opacity: 0.75;
+}
+
+#why-realtime-desktop .background {
+  background: url('static/images/intro/why-realtime/desktop.png');
+  background-size: 100% auto;
+  filter: grayscale(75%) contrast(100%);
+  opacity: 0.75;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "real-time-apis-talk-presentation",
+  "version": "0.0.0",
+  "author": "",
+  "private": "true",
+  "devDependencies": {
+    "babel-preset-es2015": "6.16.0",
+    "babel-preset-react": "6.16.0",
+    "headjs": "1.0.3",
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
+    "reveal.js": "3.3.0",
+    "roboter": "0.12.4",
+    "roboter-client": "0.12.4"
+  }
+}

@@ -1,0 +1,15 @@
+<span class="fragment">
+const Api = require('./Api'),
+      WsTransport = require('./transports/WsTransport');
+
+const transport = new WsTransport('ws://localhost:3000'),
+      api = new Api(transport);
+
+const render = require('../../../shared/render');
+
+api.connect(() => {
+  api.subscribe('dashboard', (event) => {
+    render.dashboard(event.payload);
+  });
+});
+</span>

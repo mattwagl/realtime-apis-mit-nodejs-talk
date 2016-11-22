@@ -1,0 +1,24 @@
+#design-patterns {
+  background: #000;
+  opacity: 1 !important;
+}
+
+#design-patterns .background {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: url('static/images/design-patterns/6468186815_4a0fae1ef9_b.jpg') no-repeat;
+  background-size: cover;
+  filter: grayscale(100%) contrast(200%);
+  opacity: 0.2;
+  z-index: 1;
+}
+
+#design-patterns h2,
+#design-patterns h4 {
+  color: #fff;
+  z-index: 100;
+  text-shadow: 0px 0px 10px #000;
+}

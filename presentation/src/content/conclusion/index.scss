@@ -1,0 +1,25 @@
+#conclusion {
+  background: #000;
+  opacity: 1 !important;
+}
+
+#conclusion .background {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: url('static/images/conclusion/14577415000_00bb9dac25_h.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: grayscale(100%) contrast(150%);
+  opacity: 0.15;
+  z-index: 1;
+}
+
+#conclusion h2,
+#conclusion h4 {
+  color: #fff;
+  z-index: 100;
+  text-shadow: 0px 0px 10px #000;
+}

@@ -1,0 +1,23 @@
+.browser .header {
+  background: #E8E8E8;
+  border-radius: 4px 4px 0 0;
+  padding-bottom: 3px;
+}
+
+.browser .header .title {
+  background: #fff;
+  width: 70%;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 6px 14px 4px;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+.browser .header .title .scheme {
+  color: #7ED321;
+}
+
+.browser .body {
+  background: #fafafa
+}

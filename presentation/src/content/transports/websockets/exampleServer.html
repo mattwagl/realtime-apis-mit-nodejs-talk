@@ -1,0 +1,40 @@
+<span class="fragment">const WebSocketServer = require('ws').Server;
+
+const app = express(),
+      httpServer = http.createServer(app);
+
+const webSocketServer =
+  new WebSocketServer({ server: httpServer });
+
+webSocketServer.on('connection', socket => {
+  let liveStream;
+
+  socket.on('message', message => {
+    message = JSON.parse(message);
+
+    switch (message.command) {
+      case 'subscribe':
+        // Already subscribed
+        if (liveStream) { return; }
+
+        liveStream = dataService.
+          getLiveStream(message.to);
+
+        liveStream.on('data', data => {
+          socket.send(JSON.stringify({
+            event: 'dashboard::updated',
+            payload: data
+          }));
+        });
+        break;
+    }
+  });
+
+  socket.once('close', () => {
+    if (liveStream) {
+      liveStream.end();
+    }
+  });
+});
+
+httpServer.listen(3000);</span>

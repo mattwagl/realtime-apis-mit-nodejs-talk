@@ -1,0 +1,21 @@
+const Api = function (transport) {
+  this.transport = transport;
+};
+<span class="fragment">
+Api.prototype.connect = function (options, callback) {
+  this.transport.connect(options, callback);
+};</span>
+<span class="fragment">
+Api.prototype.execute = function (commandName, params) {
+  this.transport.execute(commandName, params);
+};</span>
+<span class="fragment">
+Api.prototype.subscribe = function (eventName, listener) {
+  this.transport.subscribe(eventName, listener);
+};</span>
+<span class="fragment">
+Api.prototype.unsubscribe = function (eventName, listener) {
+  this.transport.unsubscribe(eventName, listener);
+};
+
+module.exports = Api;</span>

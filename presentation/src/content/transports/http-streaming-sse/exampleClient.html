@@ -1,0 +1,16 @@
+<span class="fragment">const source = new EventSource('/api/dashboard/updates');
+
+source.addEventListener('open', event => {
+});
+
+source.addEventListener('message', event => {
+  var data = JSON.parse(event.data);
+  // Update client state with event.data
+  // Render new state
+});
+
+source.addEventListener('error', err => {
+  if (source.readyState === EventSource.CLOSED) {
+    console.log('Connection was closed');
+  }
+});</code>

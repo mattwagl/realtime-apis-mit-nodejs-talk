@@ -1,0 +1,8 @@
+<code class="javascript light" data-noescape>
+const uuid = require('uuid');
+
+...
+Api.prototype.execute = function (commandName, params) {
+  this.transport.execute(commandName, params);
+};
+</code>

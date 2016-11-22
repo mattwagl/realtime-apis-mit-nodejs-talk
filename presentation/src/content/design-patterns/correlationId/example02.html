@@ -1,0 +1,11 @@
+<code class="javascript light" data-noescape>
+const uuid = require('uuid');
+
+...
+<span class="fragment">
+api.
+  execute('widget::resize', { widgetId: 200, newSize: 'large' }).
+  andWaitFor('widget::resized', () => {
+    // Inform user about success
+  });
+</span></code>

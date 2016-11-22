@@ -1,0 +1,20 @@
+<span>// HTTP
+const request = require('superagent');
+
+request.
+  get('/api/dashboard').
+  set('Authorization', `Bearer ${token}`)
+  end((err, res) => {
+    // Update client state with res.body
+    // Render new state
+
+    setTimeout(pollData, 2.5 * 1000)
+  });</span>
+
+// Websockets
+<span>webSocket.onopen = () => {
+  webSocket.send(JSON.stringify({
+    command: 'authenticate',
+    token
+  }));
+};</span>

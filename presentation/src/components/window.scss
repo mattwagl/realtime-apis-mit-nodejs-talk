@@ -1,0 +1,75 @@
+.window {
+  margin: 0.5em 0.25em 0.5em 0.25em !important;
+  border: 1px solid rgb(195, 195, 195);
+  border-radius: 4px;
+  box-shadow: 0px 2px 3px 0px rgba(50, 50, 50, 0.11);
+  text-align: left;
+  vertical-align: top;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+// .window:hover {
+//   flex: 1.75 1.75 !important;
+// }
+
+.window .header {
+  flex: 0 0 50px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.window .header .title {
+  flex: 1 1 100%;
+  font: 11px "Myriad Pro", "Arial";
+}
+
+.window .bullet {
+  flex: 0 0 auto;
+  height: 11px;
+  width: 11px;
+  background: #ccc;
+  border-radius: 100%;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.window .bullet-red {
+  background: $color-red;
+}
+
+.window .bullet-yellow {
+  background: $color-orange;
+}
+
+.window .bullet-green {
+  background: $color-green;
+}
+
+.window .body {
+  flex: 1 1 100%;
+  overflow: scroll;
+}
+
+.window .body pre {
+  margin: 0px;
+  min-height: 100%;
+  min-width: 100%;
+}
+.window .body code {
+  overflow: visible;
+}
+
+.terminal {
+  background: rgba(0, 0, 0, 1);
+}
+
+.terminal .title {
+  text-align: center;
+  color: #766F79;
+  padding: 6px 14px 4px;
+  margin: 10px;
+}

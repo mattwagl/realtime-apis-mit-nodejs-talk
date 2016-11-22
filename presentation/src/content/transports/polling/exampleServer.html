@@ -1,0 +1,15 @@
+<span>const dataService = require('./services/data');
+
+const app = express();
+
+app.get('/api/dashboard', (req, res) => {
+  dataService.get('dashboard', (err, data) => {
+    if (err) {
+      ...
+    }
+
+    res.send(data);
+  });
+});
+
+app.listen(3000);</span>

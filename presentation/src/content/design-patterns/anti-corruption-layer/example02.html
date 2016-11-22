@@ -1,0 +1,41 @@
+<span class="fragment">
+const util = require('util');
+
+const EventEmitter = require('eventemitter2').EventEmitter2;
+
+const WebSocketTransport = function (url) {
+  this.url = url;
+};
+
+util.inherits(WebSocketTransport, EventEmitter);
+</span><span class="fragment">
+WebSocketTransport.prototype.connect = function (callback) {
+  this.socket = new WebSocket(this.url);
+  this.socket.onopen = () => {
+    callback(null);
+  };
+
+  this.socket.onmessage = this.handleMessage.bind(this);
+};
+</span><span class="fragment">
+WebSocketTransport.prototype.handleMessage = function (rawEvent) {
+  let event;
+
+  try {
+    event = JSON.parse(rawEvent.data);
+  } catch (err) {
+    return;
+  }
+
+  this.emit(event.type, event);
+};
+</span><span class="fragment">
+WebSocketTransport.prototype.execute = function (commandName, params) {
+  this.socket.send(JSON.stringify({ command: commandName, params }));
+};
+
+WebSocketTransport.prototype.subscribe = function (topic, listener) {
+  this.on(topic, listener);
+  this.execute('subscribe', { to: topic });
+};
+</span>

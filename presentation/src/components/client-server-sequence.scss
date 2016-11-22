@@ -1,0 +1,158 @@
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    // transform: translate3d(-10%, 0, 0);
+    transform: scaleX(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: scaleX(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.client-server-sequence {
+  .header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex: 0 0 2em;
+    color: #fff !important;
+    position: fixed;
+    font-size: 1.1em;
+
+    .client,
+    .server {
+      background: #aaa;
+      height: 100%;
+      flex: 0 0 auto;
+      padding: 0.5em;
+    }
+
+    .client {
+      text-align: left;
+    }
+
+    .server {
+      text-align: right;
+    }
+  }
+
+  .steps {
+    flex: 1 1 100%;
+    overflow-y: scroll;
+
+    .step {
+      margin: 0.4em 2em;
+      // border-bottom: rgba(0,0,0,0.25) solid 1px;
+      position: relative;
+      line-height: 1.1;
+    }
+
+    svg {
+      display: inline-block;
+      vertical-align: text-top;
+      margin-left: 0.3em;
+      margin-right: 0.3em;
+    }
+
+    .description {
+      font-size: 1em;
+    }
+
+    .step .arrow {
+      stroke: $color-blue;
+      fill: none;
+      stroke-width: 1.5px;
+      stroke-linecap: round;
+    }
+
+    .step .arrow.arrow--keepalive .arrow__line {
+      // stroke: rgba(#0091FF,0.4);
+      stroke-dasharray: 10;
+    }
+
+    .step .arrow--duplex {
+      stroke: rgba(#04D892,1);
+    }
+
+    .step--client .description {
+      margin-left: 0.75em;
+      margin-right: 0.75em;
+      padding-right: calc(50% + 0.15em);
+    }
+
+    .step--client .arrow {
+      margin: 0.25em 0.75em 0.5em 0.75em;
+      width: calc(100% - 1.25em);
+    }
+
+    .step--client.current-fragment .arrow {
+      transform-origin: left center;
+      animation-name: fadeInLeft;
+      animation-duration: 500ms;
+    }
+
+    .step--server .description {
+      margin-left: 0.75em;
+      margin-right: 0.75em;
+      padding-left: calc(50% + 0.15em);
+      text-align: right;
+    }
+
+    .step--server .arrow {
+      margin: 0.25em 0.75em 0.5em 0.75em;
+      width: calc(100% - 1.25em);
+      display: block;
+    }
+
+    .step--server.current-fragment .arrow {
+      transform-origin: right center;
+      animation-name: fadeInRight;
+      animation-duration: 500ms;
+    }
+
+    .step--both .description {
+      margin-left: 0.75em;
+      margin-right: 0.75em;
+      text-align: center;
+    }
+
+    .step--both .arrow.client {
+      margin-left: 0.75em;
+      margin-right: 1em;
+      width: calc(100% - 1.75em);
+    }
+
+    .step--both.current-fragment .arrow.client {
+      transform-origin: right center;
+      animation-name: fadeInRight;
+      animation-duration: 500ms;
+    }
+
+    .step--both .arrow.server {
+      margin-left: 0.75em;
+      margin-right: 1em;
+      width: calc(100% - 1.75em);
+    }
+
+    .step--both.current-fragment .arrow.server {
+      transform-origin: left center;
+      animation-name: fadeInLeft;
+      animation-duration: 500ms;
+    }
+  }
+}

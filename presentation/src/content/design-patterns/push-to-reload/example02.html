@@ -1,0 +1,11 @@
+...
+
+api.subscribe(`issue::${currentIssue.id}::updated`, (event) => {
+  stores.issues.find(issue.id => currentIssue.id).load();
+});
+
+api.subscribe(`issue::${currentIssue.id}::reaction-added`, (event) => {
+  stores.issues.find(issue.id => currentIssue.id).load();
+});
+
+...

@@ -1,0 +1,16 @@
+{
+  "name": "polling",
+  "version": "1.0.0",
+  "description": "An example demonstrating polling",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack client.js public/bundle.js --devtool source-map",
+    "prestart": "npm run build",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "4.14.0",
+    "superagent": "2.3.0",
+    "webpack": "1.13.3"
+  }
+}

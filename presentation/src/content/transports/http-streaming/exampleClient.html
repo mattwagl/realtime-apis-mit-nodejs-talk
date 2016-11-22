@@ -1,0 +1,20 @@
+<span class="fragment">const client = require('json-lines-client');
+
+client({
+  protocol: 'http',
+  host: 'api.dashboard.io',
+  port: 3000,
+  path: '/api/dashboard/updates',
+  headers: {
+    authorization: 'Bearer ' + token
+  }
+}</span><span class="fragment">, server => {
+  server.stream.on('data', data => {
+    // ...
+  });
+
+  server.stream.on('end', () => {
+    // ...
+  });
+});</span>
+</code>

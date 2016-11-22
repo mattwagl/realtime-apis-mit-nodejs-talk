@@ -1,0 +1,19 @@
+<code class="javascript light" data-noescape>
+const uuid = require('uuid');
+
+...
+Api.prototype.execute = function (commandName, params) {
+  const params = _.merge({}, params, { correlationId: uuid.v4() });
+
+  process.nextTick(() => {
+    this.transport.execute(commandName, params);
+  });
+
+  return {
+    andWaitFor (eventName, callback) {
+      this.transport.once(`${eventName}::${correlationId}`, (event) => {
+        callback(event);
+      });
+    }
+  }
+};</code>
