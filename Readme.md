@@ -6,4 +6,4 @@ Siehe `examples`…
 
 ## Präsentation
 
-[Hier geht's zu den Slides](https://github.com/mattwagl/realtime-apis-mit-nodejs-talk)
+[Hier geht's zu den Slides](https://mattwagl.github.io/realtime-apis-mit-nodejs-talk)
