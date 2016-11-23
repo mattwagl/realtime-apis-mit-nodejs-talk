@@ -3,7 +3,8 @@ const uuid = require('uuid');
 
 ...
 Api.prototype.execute = function (commandName, params) {
-  const params = _.merge({}, params, { correlationId: uuid.v4() });
+  const correlationId = uuid.v4(),
+        params = _.merge({}, params, { correlationId });
 
   process.nextTick(() => {
     this.transport.execute(commandName, params);
@@ -16,4 +17,5 @@ Api.prototype.execute = function (commandName, params) {
       });
     }
   }
-};</code>
+};
+</code>
