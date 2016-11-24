@@ -2,8 +2,8 @@
 @import "../node_modules/reveal.js/css/theme/simple.css";
 @import "components/index";
 
-body {
-  background: white;
+html, body {
+  background: transparent;
 }
 
 * {
@@ -21,11 +21,11 @@ body {
 
 .reveal {
   * {
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6, p, small, li, div {
-    font-family: "ff-netto-web-1";
+    font-family: "ff-netto-web-1", Arial, sans-serif;
     color: $color-dark-gray;
   }
 

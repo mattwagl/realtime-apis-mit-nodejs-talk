@@ -4,14 +4,6 @@ code {
   line-height: 1.15em !important;
 }
 
-.hljs.light {
-	color: #000 !important;
-}
-
-.hljs.dark {
-	color: #fff !important;
-}
-
 .hljs.dark::selection {
 	background: $color-green !important;
 }
